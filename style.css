@@ -1,0 +1,116 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+}
+#container{
+  width: 100%;
+  height: 100%;
+  background-color: rgb(108, 170, 97);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#child{
+  width: 70%;
+  height: 80%;
+  background-color: rgb(229, 225, 220);
+  border-radius: 10px;
+  overflow: hidden;
+}
+#menu{
+  width: 100%;
+  height: 12%;
+  background-color: rgb(43, 90, 47);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.elem{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.value{
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  margin: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(34, 72, 40); 
+}
+h4{
+  font-weight: 700;
+  color: white;
+}
+.bubbletop{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  
+}
+.bubble{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 5px 5px 0px 10px;
+  background-color: rgb(96, 208, 113);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.bubble:hover{
+  background-color: rgb(136, 211, 148);
+  cursor: pointer;
+}
+
+@media(max-width:400px) {
+  #menu{
+    height: 10%;
+  }
+  .value{
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    margin: 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(34, 72, 40); 
+    font-size: 13px;
+  }
+  h4{
+    font-weight: 700;
+    color: white;
+    font-size: 15px;
+  }
+  .bubble{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 5px 5px 0px 10px;
+    background-color: rgb(96, 208, 113);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #child{
+    width: 70%;
+    height: 82%;
+    background-color: rgb(229, 225, 220);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+}
