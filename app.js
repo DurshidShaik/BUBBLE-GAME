@@ -21,8 +21,8 @@ function RunTimer() {      //run timer function
       timer--;
     } else {
       clearInterval(interval);
-      document.querySelector("#score").innerHTML = `Your Score Is :${Score}`;
-      document.querySelector(".show-results").style.display = "block";
+      document.querySelector("#score").innerHTML = `Your Score Is :${Score}`; //adding score on pop up message
+      document.querySelector(".show-results").style.display = "block"; //displaying the pop up message
  
     }
   }, 1000);
@@ -50,12 +50,14 @@ bubbleValue.addEventListener("click",(dets) => {    //if hit value and user hitt
 })
 
 document.querySelector(".play-again").addEventListener("click",()=>{
-  document.querySelector(".show-results").style.display = "none";
+  document.querySelector(".show-results").style.display = "none";   //adding event on button
   Score = 0;
+  ScoreValue.textContent = Score;
   timer = 60;
   MakeBubble();
   RunTimer(); 
   Hitvalue(); 
+  
 })
 
 MakeBubble();
