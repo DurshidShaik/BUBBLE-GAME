@@ -1,13 +1,13 @@
-const Hit = document.querySelector("#Hit");
-const Timerval = document.querySelector("#Timer");
-let ScoreValue = document.querySelector("#Score");
-let bubbleValue = document.querySelector(".bubbletop");
+const Hit = document.querySelector("#Hit");  // hit value
+const Timerval = document.querySelector("#Timer");  // time INterval 
+let ScoreValue = document.querySelector("#Score"); // Score Board
+let bubbleValue = document.querySelector(".bubbletop"); // value in the bubble
 
 
-function MakeBubble() {
+function MakeBubble() {  // making the bubble in the web using js
   let box = "";
   for (let i = 0; i <= 90; i++) {
-    box += `<div class="bubble" type="button">${Math.floor(
+    box += `<div class="bubble" type="button">${Math.floor(    //using math function to genarate random numbers
       Math.random() * 10
     )}</div>`;
   }
@@ -15,7 +15,7 @@ function MakeBubble() {
 }
 
 let timer = 60;
-function RunTimer() {
+function RunTimer() {      //run timer function 
   let interval = setInterval(() => {
     if (timer >= 0) {
       Timerval.textContent = timer;
@@ -29,11 +29,11 @@ function RunTimer() {
 }
 
 function Hitvalue() {
-  Hit.textContent = Math.floor(Math.random() * 10);
+  Hit.textContent = Math.floor(Math.random() * 10);   //generating Hit value
 }
 
 let Score = 0;
-function ScoreIncrease() {
+function ScoreIncrease() {   //adding the scores 
   Score += 10;
   ScoreValue.textContent = Score;
   console.log("10")
@@ -41,7 +41,7 @@ function ScoreIncrease() {
 
 
 
-bubbleValue.addEventListener("click",(dets) => {
+bubbleValue.addEventListener("click",(dets) => {    //if hit value and user hitted value mathces it will refresh the hit value and increases the score board by 10 points and refreshes the user values..
   if(dets.target.textContent === Hit.textContent){
     ScoreIncrease();
     MakeBubble();
