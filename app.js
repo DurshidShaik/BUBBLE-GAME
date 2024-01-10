@@ -3,7 +3,6 @@ const Timerval = document.querySelector("#Timer");  // time INterval
 let ScoreValue = document.querySelector("#Score"); // Score Board
 let bubbleValue = document.querySelector(".bubbletop"); // value in the bubble
 
-
 function MakeBubble() {  // making the bubble in the web using js
   let box = "";
   for (let i = 0; i <= 90; i++) {
@@ -22,8 +21,9 @@ function RunTimer() {      //run timer function
       timer--;
     } else {
       clearInterval(interval);
-      bubbleValue.textContent = `Game Over! Your Score is : ${Score}`
-     
+      document.querySelector("#score").innerHTML = `Your Score Is :${Score}`;
+      document.querySelector(".show-results").style.display = "block";
+ 
     }
   }, 1000);
 }
@@ -47,6 +47,15 @@ bubbleValue.addEventListener("click",(dets) => {    //if hit value and user hitt
     MakeBubble();
     Hitvalue(); 
   }
+})
+
+document.querySelector(".play-again").addEventListener("click",()=>{
+  document.querySelector(".show-results").style.display = "none";
+  Score = 0;
+  timer = 60;
+  MakeBubble();
+  RunTimer(); 
+  Hitvalue(); 
 })
 
 MakeBubble();
