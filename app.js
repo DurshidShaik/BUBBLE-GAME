@@ -13,17 +13,31 @@ function MakeBubble() {  // making the bubble in the web using js
   document.querySelector(".bubbletop").innerHTML = box;
 }
 
+
+
+  document.querySelector(".play-again").addEventListener("click",()=>{
+    document.querySelector(".show-results").style.display = "none";   //adding event on button
+    Score = 0;
+    ScoreValue.textContent = Score;
+    timer = 60;
+    MakeBubble();
+    RunTimer(); 
+    Hitvalue(); 
+    
+  })
+
+
+
 let timer = 60;
 function RunTimer() {      //run timer function 
   let interval = setInterval(() => {
     if (timer >= 0) {
       Timerval.textContent = timer;
       timer--;
-    } else {
+    } else{
       clearInterval(interval);
-      document.querySelector("#score").innerHTML = `Your Score Is :${Score}`; //adding score on pop up message
+      document.querySelector("#score").innerHTML = `Your Score Is :  ${Score}`; //adding score on pop up message
       document.querySelector(".show-results").style.display = "block"; //displaying the pop up message
- 
     }
   }, 1000);
 }
@@ -36,7 +50,7 @@ let Score = 0;
 function ScoreIncrease() {   //adding the scores 
   Score += 10;
   ScoreValue.textContent = Score;
-  console.log("10")
+  /* console.log("10") */
 }
 
 
@@ -49,16 +63,6 @@ bubbleValue.addEventListener("click",(dets) => {    //if hit value and user hitt
   }
 })
 
-document.querySelector(".play-again").addEventListener("click",()=>{
-  document.querySelector(".show-results").style.display = "none";   //adding event on button
-  Score = 0;
-  ScoreValue.textContent = Score;
-  timer = 60;
-  MakeBubble();
-  RunTimer(); 
-  Hitvalue(); 
-  
-})
 
 MakeBubble();
 RunTimer();
