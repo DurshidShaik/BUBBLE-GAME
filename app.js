@@ -3,6 +3,8 @@ const Timerval = document.querySelector("#Timer");  // time INterval
 let ScoreValue = document.querySelector("#Score"); // Score Board
 let bubbleValue = document.querySelector(".bubbletop"); // value in the bubble
 
+
+
 function MakeBubble() {  // making the bubble in the web using js
   let box = "";
   for (let i = 0; i <= 90; i++) {
@@ -13,20 +15,9 @@ function MakeBubble() {  // making the bubble in the web using js
   document.querySelector(".bubbletop").innerHTML = box;
 }
 
-
-
-  document.querySelector(".play-again").addEventListener("click",()=>{
-    document.querySelector(".show-results").style.display = "none";   //adding event on button
-    Score = 0;
-    ScoreValue.textContent = Score;
-    timer = 60;
-    MakeBubble();
-    RunTimer(); 
-    Hitvalue(); 
-    
-  })
-
-
+function Hitvalue() {
+  Hit.textContent = Math.floor(Math.random() * 10);   //generating Hit value
+}
 
 let timer = 60;
 function RunTimer() {      //run timer function 
@@ -42,9 +33,7 @@ function RunTimer() {      //run timer function
   }, 1000);
 }
 
-function Hitvalue() {
-  Hit.textContent = Math.floor(Math.random() * 10);   //generating Hit value
-}
+
 
 let Score = 0;
 function ScoreIncrease() {   //adding the scores 
@@ -61,6 +50,17 @@ bubbleValue.addEventListener("click",(dets) => {    //if hit value and user hitt
     MakeBubble();
     Hitvalue(); 
   }
+})
+
+document.querySelector(".play-again").addEventListener("click",()=>{
+  document.querySelector(".show-results").style.display = "none";   //adding event on button
+  Score = 0;
+  ScoreValue.textContent = Score;
+  timer = 60;
+  MakeBubble();
+  RunTimer(); 
+  Hitvalue(); 
+  
 })
 
 
